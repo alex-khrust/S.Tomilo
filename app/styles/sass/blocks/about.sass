@@ -1,0 +1,125 @@
+.about
+  
+  .container
+    display: flex
+    flex-flow: column-reverse
+    align-items: center
+    justify-content: space-between
+    row-gap: 80px
+    @media ( min-width: 768px )
+      flex-flow: wrap
+
+  .foto
+    width: auto
+    // height: auto
+    height: clamp(400px, 90vh, 823px)
+    max-width: 520px
+    // max-height: 823px
+    position: relative
+    &::after
+      content: ''
+      width: 389px
+      height: 389px
+      object-fit: contain
+      display: inline-block
+      position: absolute
+      right: -130px
+      bottom: 50px
+      border: 3px solid rgb(100, 38, 221)
+      border-radius: 50%
+      opacity: 0.102
+      z-index: -1
+
+
+    img
+      width: auto
+      height: 100%
+      object-fit: cover
+
+    .triangle
+      left: -30px
+      bottom: -30px
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170px' height='150px' stroke-width='30px' stroke='rgb(100, 34, 219)' fill='transparent'%3E%3Cpolygon points='30,130 85,30 140,130'/%3E%3C/svg%3E") no-repeat center
+      transform: rotate(45deg)
+
+    .circle
+      right: -105px
+      top: 80px
+
+  .desc
+    width: 100%
+    max-width: 670px
+    padding-left: 50px
+    display: flex
+    flex-flow: column
+
+    h3
+      margin-left: 0
+      @media (min-width: 768px)
+        &::before
+          left: -80px !important
+
+    p
+      margin: 12px 0
+      opacity: 0.81
+      font-family: GothamPro
+      // font-size: 18px
+      font-weight: 500
+      line-height: 1.78
+      text-align: left
+      color: rgba(37, 35, 77, 0.81)
+      position: relative
+      display: inline-block
+      &:before
+        content: ''
+        width: 7px
+        height: 100%
+        background-color: #ffc727
+        border-radius: 3.5px
+        position: absolute
+        top: 0
+        left: -50px
+      &:first-of-type,
+      &:last-of-type
+        &:before
+          display: none
+
+    .year-2003,
+    .year-2007,
+    .year-2014
+      &::after
+        content: '2003'
+        position: absolute
+        top: 50%
+        left: -20px
+        transform: translateY(-50%) 
+        font-size: clamp(30px, 5vw, 50px)
+        font-family: "Rubik"
+        color: rgb(244, 245, 251)
+        font-weight: bold
+        line-height: 0.56
+        z-index: -1
+        
+    .year-2007
+      &::after
+        content: '2007'
+    .year-2014
+      &::after
+        content: '2014'
+
+ 
+
+    .btn
+      margin-top: 50px
+
+  // .foto,
+  // .desc
+  //   max-width: 45%
+
+.foto::after,
+.triangle,
+.circle
+  display: none !important
+  @media ( min-width: 768px )
+    display: inline-block !important
+    

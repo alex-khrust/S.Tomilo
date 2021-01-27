@@ -1,0 +1,152 @@
+.reviews
+  padding-top: 70px
+  background: url(../images/dist/bg-reviews.png) no-repeat
+  background-size: cover !important
+  background-origin: border-box !important
+  position: relative
+  z-index: 1
+  @media (min-width: 1080px)
+    padding-top: 170px
+  @media (min-width: 1300px)
+    background-size: 100% 100% !important
+    
+  
+  .container
+    display: flex
+    flex-flow: column
+    align-items: center
+
+  h3
+    margin-left: 0
+    font-family: GothamPro
+    font-size: 30px
+    font-size: clamp(20px, 2.1vw, 30px)
+    font-weight: normal
+    letter-spacing: 6px
+    color: #ffffff
+    &::before
+      display: none
+
+  h4
+    margin-bottom: 55px
+    font-family: Rubik
+    font-size: 70px
+    font-size: clamp(30px, 4.7vw, 70px)
+    font-weight: 500
+    line-height: 0.94
+    text-align: center
+    color: #ffffff
+    @media (min-width: 1080px)
+      margin-bottom: 85px
+
+  .slider
+    width: 100%
+    height: 100%
+    max-width: 730px
+    // max-height: 433px
+    padding: 40px 20px
+    margin-bottom: 100px
+    display: flex
+    align-items: center
+    justify-content: center
+    box-shadow: 0px 30px 70px 0 rgba(103, 48, 226, 0.5)
+    background: #ffffff url(../images/dist/quote.png) no-repeat center top 10px
+    border-radius: 20px
+    position: relative
+    @media (min-width: 1080px)
+      margin-bottom: 190px
+    &::before
+      content: ''
+      width: calc( 100% - 40px )
+      height: 100px
+      position: absolute
+      bottom: -28px
+      left: 50%
+      transform: translateX(-50%)
+      background-color: #8a5fe9 
+      box-shadow: 0px 30px 70px 0px rgba(103, 48, 226, 0.5)
+      border-radius: 20px
+      z-index: -1
+    &::after
+      content: ''
+      width: calc( 100% - 80px )
+      height: 100px
+      position: absolute
+      bottom: -48px
+      left: 50%
+      transform: translateX(-50%)
+      box-shadow: 0px 30px 70px 0 rgba(103, 48, 226, 0.5)
+      background-color: #9a76ec
+      border-radius: 20px
+      opacity: 0.2
+      z-index: -2
+
+    .swiper-slide
+      width: 100%
+      height: 100%
+      display: flex
+      align-items: center
+      flex-flow: column
+
+      blockquote
+        width: 100%
+        max-width: 605px
+        margin: 0
+        font-family: GothamPro
+        font-size: 22px
+        font-size: clamp(18px, 1.54vw, 22px)
+        font-weight: 500
+        line-height: 1.95
+        text-align: center
+        color: #6a697f
+        position: relative
+
+      .author
+        margin: 15px 0
+        font-family: Rubik
+        font-size: 24px
+        font-size: clamp(20px, 1.69vw, 24px)
+        font-weight: 600
+        line-height: 1
+        color: #6427de
+
+      .company
+        margin-bottom: 20px
+        font-family: Rubik
+        font-size: 19px
+        font-size: clamp(16px, 1.32vw, 19px)
+        font-weight: 500
+        color: #6a697f
+
+    .btns
+      width: auto
+      height: auto
+      display: flex
+      align-items: center
+      justify-content: center
+      gap: 20px
+    .swiper-btn-prev,
+    .swiper-btn-next
+      width: 50px
+      height: 50px
+      border-radius: 50%
+      border: solid 2px #6a697f
+      display: flex
+      align-items: center
+      justify-content: center
+      transition: .3s
+      // padding: 16px
+      svg
+        width: 16px
+        height: 18px
+        color: #6a697f
+        transition: .3s
+      &:hover
+        background: #ffc727
+        border-color: #ffc727
+        svg
+          color: #fff
+
+
+
+

@@ -1,0 +1,57 @@
+.why
+  width: 100%
+  height: auto
+  padding-bottom: 0
+  margin-bottom: 0
+  background: url(../images/dist/bg-why.gif) no-repeat right
+  background-size: cover !important
+  @media (min-width: 768px)
+    background-position: center
+    background-size: 100% 100% !important
+    
+
+  .container
+    padding-top: 80px
+    padding-bottom: 37.5px
+    @media (min-width: 768px)
+      padding-top: 220px
+
+  h3
+    max-width: 400px
+
+  h5
+    margin-bottom: 50px
+    font-size: clamp(18px, 1.5vw, 22px)
+    color: rgba(37, 35, 77, 0.81)
+    line-height: 1.45
+    opacity: .8
+
+  &__list
+    width: 100%
+    padding: 0
+    list-style: none
+    justify-content: space-between
+    display: grid
+    grid-auto-flow: row
+    grid-template-columns: repeat(auto-fill, minmax(auto, 100%))
+    gap: 4vmax 4vmin
+    opacity: .8
+    @media (min-width: 768px)
+      grid-auto-flow: auto
+      grid-template-columns: repeat(auto-fill, minmax(auto, 47%))
+
+    li
+      width: 100%
+      // max-width: 46%
+      padding-left: clamp(41px, 5vw, 91px)
+      position: relative
+      &::before
+        content: ''
+        position: absolute
+        left: 0
+        top: -5px
+        width: 28px
+        height: 30px
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='34px' height='36px'%3E%3Cpath fill-rule='evenodd' stroke='rgb(255, 199, 39)' stroke-width='4px' stroke-linecap='butt' stroke-linejoin='miter' fill='none' d='M2.429,31.985 L5.368,2.315 L29.594,19.695 L2.429,31.985 Z'/%3E%3C/svg%3E") no-repeat
+        background-size: 100% 100%
+        filter: drop-shadow(0px 9px 13px rgba(255, 199, 39, 0.75))

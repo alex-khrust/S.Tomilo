@@ -1,0 +1,116 @@
+.portfolio
+  width: 100%
+  height: auto
+  padding: 70px 0 15px
+  margin-top: 0
+  background-color: #fcfcff
+  display: flex
+  flex-flow: column
+
+  h3
+    margin-bottom: 35px
+
+  &__list
+    width: 100%
+    padding: 0
+    list-style: none
+    display: flex
+    flex-flow: column wrap
+
+    li
+      width: 100%
+      display: flex
+      margin: 65px auto
+      position: relative
+      &:nth-child(odd)
+        .container
+          flex-flow: row-reverse
+        .bg-project
+          border-radius: 0 10px 10px 0
+          left: 0
+        .project__img
+        .project__desc
+          &>p,
+          &>span
+            padding-left: 90px
+            padding-right: 0
+        h4
+          margin-right: auto
+          margin-left: 0
+          &:before
+            content: '</'
+            left: -70px
+            right: unset
+
+      .container
+        display: flex
+
+      h4
+        width: auto
+        margin-bottom: 70px
+        display: inline-flex
+        font-family: Rubik
+        font-size: clamp(35px, 3vw, 64px)
+        line-height: 1.06
+        color: #ffc727
+        margin-left: auto
+        position: relative
+        &:before
+          content: '/>'
+          left: unset
+          right: -70px
+          position: absolute
+          top: 50%
+          width: 50px
+          transform: translateY(-50%)
+
+
+    .project__desc
+      width: 100%
+      max-width: 50%
+      display: flex
+      flex-flow: column
+      align-items: flex-start
+      justify-content: flex-start
+      margin-top: 70px
+
+      &>p,
+      &>span
+        padding-right: 90px
+        padding-left: 0
+
+    .bg-project
+      position: absolute
+      top: 0
+      right: 0
+      width: 42.8%
+      height: 100%
+      background-repeat: no-repeat !important
+      background-size: cover !important
+      background-position: center !important
+      background-origin: border-box !important
+      background: inherit 
+      border-radius: 10px 0 0 10px
+      z-index: -1
+
+    .project__img
+      width: 100%
+      height: 100%
+      padding: 15% 0 10%
+      // padding: 350px 0 230px
+      display: flex
+      align-items: center
+      z-index: 1
+
+      img
+        width: 100%
+        height: 100%
+        max-width: 732px
+        max-height: 488px
+        object-fit: contain
+        box-shadow: 0px 5px 36px 0 rgba(0, 0, 0, 0.22)
+
+
+
+        
+

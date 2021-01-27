@@ -1,0 +1,228 @@
+// USER VARIABLES SECTION
+
+$accent: orange // Accent Color
+$fontsize: clamp(14px, 1.2vw, 19px) // Body Font Size
+$textcolor: #333 // Text Color
+$lineheight: 1.65 // Document Line Height
+$userfont: GothamPro, sans-serif // User Font Family
+$systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
+
+$txt-white: #fff
+$txt-blue: #6422db
+$txt-yelow: #ffc727
+
+// Bootstrap compatible gutter variable => $gutter
+$grid-gutter-width: 30px
+$gutter: $grid-gutter-width
+
+// IMPORT SECTION
+
+@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
+// @import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
+// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
+// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+
+// FONTS LOAD SECTION
+
+@mixin font($fname, $fstyle, $fweight, $furl)
+  @font-face
+    font-family: $fname
+    font-style: $fstyle
+    font-weight: $fweight
+    src: url($furl) format('woff2')
+
+@include font('GothamPro', normal, 400, '../fonts/GothamPro.woff2')
+@include font('GothamPro', normal, 500, '../fonts/GothamPro-Medium.woff2')
+@include font('GothamPro', normal, 700, '../fonts/GothamPro-Bold.woff2')
+
+@include font('Gilroy', normal, 400, '../fonts/Gilroy-Regular.woff2')
+@include font('Gilroy', normal, 900, '../fonts/Gilroy-Bold.woff2')
+
+@include font('Rubik', normal, 400, '../fonts/Rubik-Regular.woff2')
+@include font('Rubik', normal, 500, '../fonts/Rubik-Medium.woff2')
+@include font('Rubik', normal, 900, '../fonts/Rubik-Bold.woff2')
+
+// GENERAL DOCUMENT STYLES
+
+::placeholder
+  color: #666
+
+::selection
+  background-color: $accent
+  color: #fff
+
+input, textarea
+  outline: none
+  &:focus:required:invalid
+    border-color: red
+  &:required:valid
+    border-color: green
+
+body
+  font-family: $userfont
+  font-size: $fontsize
+  line-height: $lineheight
+  color: $textcolor
+  min-width: 320px
+  position: relative
+  overflow-x: hidden
+
+section
+  width: 100%
+  padding: 37.5px 0
+  display: inline-flex
+  background-origin: content-box !important
+
+.container
+  width: 100%
+  max-width: 100%
+  height: auto
+  padding: 0 15px
+  margin: 0 auto
+  // @media (min-width: 576px)
+  //   max-width: 540px
+  // @media (min-width: 768px)
+  //   max-width: 720px
+  // @media (min-width: 992px)
+  //   max-width: 960px
+  @media (min-width: 1200px)
+    max-width: 1300px
+    padding: 0 30px
+  @media (min-width: 1370px)
+    max-width: 1440px
+
+button
+  outline: none !important
+  -webkit-appearance: none !important
+  
+.btn
+  width: 100%
+  height: 100%
+  max-width: 396px
+  max-height: 90px
+  padding: 20px
+  border-radius: 45px
+  border: 3px solid #dea400
+  outline: none
+  background: linear-gradient(to top, #ffc727, #dea400)
+  font-size: clamp(18px, 1.8vw, 22px)
+  font-weight: bold
+  font-family: GothamPro
+  line-height: 1
+  letter-spacing: 1.32px
+  text-align: center
+  color: #662ee1
+  text-transform: uppercase
+  display: flex
+  align-items: center
+  justify-content: center
+  box-shadow: 0px 13px 15.04px 16.96px rgba(100, 34, 219, 0.06)
+  transition: .3s
+  outline: none
+  -webkit-appearance: none
+  &:hover,
+  &:active,
+  &.active
+    background: none
+    color: #ffc727
+    border: 3px solid #ffc727
+  &:after
+    display: none
+
+a
+  transition: .3s
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    bottom: 5px
+    left: 12.5px
+    width: 0
+    height: 2px
+    background: #ffc727
+    transition: .3s
+     outline: none
+    -webkit-appearance: none
+  &:hover,
+  &:active,
+  &.active
+    text-decoration: none
+    color: #ffc727 !important
+    &:after
+      width: calc( 80% - 25px )
+      right: 0
+
+
+.triangle
+  width: 11.46vmax
+  height: 100%
+  max-width: 165px
+  max-height: 170px
+  position: absolute
+  left: -30px
+  bottom: -30px
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170px' height='150px' stroke-width='30px' stroke='rgb(100, 34, 219)' fill='transparent'%3E%3Cpolygon points='30,130 85,30 140,130'/%3E%3C/svg%3E") no-repeat center
+  filter: drop-shadow(0 3px 25px rgba(100, 34, 219, 0.5))
+  transform: rotate(45deg)
+  z-index: 2
+
+.circle
+  width: 100%
+  height: 100%
+  max-width: 210px
+  max-height: 210px
+  position: absolute
+  right: -105px
+  top: 80px
+  // transform: translateX( -50%)
+  display: flex
+  border: 70px solid rgb(255, 199, 39)
+  border-radius: 50%
+  box-shadow: 0px 7px 35.34px 2.66px rgba(255, 199, 39, 0.54)
+  z-index: 2
+  
+h1,h2,h3,
+h4,h5,h6,
+.blue
+  color: $txt-blue
+  font-weight: bold
+
+.yelow
+  color: $txt-yelow
+  font-size: clamp(18px, 1.5vw, 26px)
+  font-weight: 900
+  line-height: 1.38
+
+h3
+  max-width: 650px
+  padding: 0
+  margin: 0 0 30px 50px
+  font-family: Rubik
+  font-size: clamp(30px, 3vw, 51.5px)
+  font-weight: 500
+  line-height: 1
+  letter-spacing: -2.06px
+  position: relative
+  &:before
+    content: '</'
+    position: absolute
+    top: 50%
+    left: -50px !important
+    width: 50px
+    transform: translateY(-50%)
+    // font-size: 1.2em
+  @media (min-width: 1400px)
+    margin: 0 0 30px
+    &::before
+      left: -80px
+
+h4
+  margin-bottom: 25px
+  opacity: 0.95
+  font-family: Rubik
+  font-size: clamp(20px, 1.613vw, 24px)
+  font-weight: 600
+  font-stretch: normal
+  font-style: normal
+  line-height: 1.17
+  letter-spacing: normal

@@ -1,0 +1,73 @@
+.footer
+  width: 100%
+  height: auto
+  padding: 20px 0 15px
+  @media (min-width: 1000px)
+    padding: 29px 0
+  .container
+    display: flex
+    align-items: center
+    justify-content: space-between
+    flex-flow: column
+    row-gap: 15px
+    @media (min-width: 1000px)
+      flex-flow: wrap
+
+  .logo, a
+    color: #6424dc !important
+
+  .foo__menu
+    display: flex
+    .menu
+      justify-content: space-evenly
+      @media (min-width: 768px)
+        justify-content: space-between
+
+  .copy
+    width: 100%
+    height: auto
+    font-family: GothamPro
+    font-size: 17px
+    font-weight: bold
+    line-height: 2.35
+    text-align: center
+    color: #053464
+    margin-top: 10px
+    @media (min-width: 1000px)
+      margin-top: 0
+
+  .social
+    display: flex
+    align-items: center
+    gap: 15px
+    a,
+    .social-link
+      width: 42px
+      height: 42px
+      display: flex
+      align-items: center
+      justify-content: center
+      border-radius: 50%
+      background: #0000ff
+      border: 2px solid #0000ff
+      opacity: .65
+      &::after
+        display: none
+      svg
+        width: auto
+        height: 18px
+        color: #fff !important
+        transition: .3s
+
+      &:hover
+        background: none
+        svg
+          color: #0000ff !important
+
+      &:nth-of-type(odd)
+        background: #ffc727
+        border-color: #ffc727
+        &:hover
+          background: none
+          svg
+            color: #ffc727 !important

@@ -1,0 +1,154 @@
+$speed: 0.6s
+$delay: .3s
+$easing: cubic-bezier(.55,0,.1,1)
+
+.close-btn
+  width: 40px
+  height: 40px
+  position: absolute
+  top: 0
+  right: 10px
+  display: flex
+  justify-content: center
+  align-items: center
+  border: none
+  background: none
+  cursor: pointer
+  z-index: 777
+  transition: opacity $speed $easing, transform $speed $easing
+  transition-delay: $delay
+  span
+    width: 24px
+    height: 2px
+    position: relative
+    transition: .3s
+    &:before,
+    &:after
+      content: ""
+      position: absolute
+      left: 0
+      height: inherit
+      width: 110%
+      background: $txt-blue
+      border-radius: 2px
+    &:before
+      top: 0
+      -webkit-transform: rotate(45deg)
+      transform: rotate(45deg)
+    &:after
+      bottom: 0
+      -webkit-transform: rotate(-45deg)
+      transform: rotate(-45deg)
+  &:hover
+    span
+      transform: scale(1.4)
+
+.locked
+  overflow: hidden
+
+
+.popups,
+.popup-overlay
+  width: 100%
+  height: 100%
+  position: fixed
+  top: 0
+  left: 0
+  display: flex
+  align-items: center
+  justify-content: center
+  z-index: 100
+  opacity: 0
+  visibility: hidden
+  backface-visibility: hidden
+  transition: opacity $speed $easing, visibility $speed $easing
+  padding: 40px
+  &.show
+    opacity: 1
+    visibility: visible
+    overflow: auto
+    .popup-overlay
+      padding: 0
+      opacity: 1
+      visibility: visible
+      background: rgba(242, 242, 248, 0.6)
+
+.popup
+  width: auto
+  height: auto
+  padding: 40px
+  background-color: #ffffff
+  box-shadow: 0 9px 51px 0 rgba(0, 0, 0, 0.31)
+  display: flex
+  flex-flow: column
+  align-items: center
+  justify-content: center
+  position: absolute
+  // margin: 40px
+  opacity: 0
+  // overflow-y: auto
+  overflow: visible
+  z-index: 999
+  visibility: hidden
+  backface-visibility: hidden
+  transform: scale(.8)
+  transition: all $speed $easing
+  &.show
+    visibility: visible
+    opacity: 1
+    transform: scale(1)
+
+    .close-btn
+      transform: translateY(10px)
+      opacity: 1
+
+  form
+    width: 100%
+    height: 100%
+    padding: 0 55px
+    display: flex
+    flex-flow: column
+    align-items: center
+    justify-content: center
+
+    h4
+      margin-bottom: 50px
+      font-size: 42px
+      font-family: GothamPro
+      color: rgb(255, 199, 39)
+      line-height: 1.048
+      text-align: center
+
+    input
+      margin-bottom: 10px
+      // min-height: 60px
+      // padding: 10px 45px
+      // @media (min-width: 1440px)
+      //   min-height: 90px
+      //   padding: 25px 45px
+
+    textarea
+      height: 150px
+      @media (min-width: 1440px)
+        height: 200px
+
+    
+    .btn
+      // height: 60px
+      margin-top: 50px
+      // @media (min-width: 1440px)
+      //   height: 90px
+
+
+
+.send-ok
+  width: 100%
+  max-width: 300px
+  padding: 20px
+  font-size: 42px
+  font-weight: bold
+  font-family: GothamPro
+  color: rgb(255, 199, 39)
+  line-height: 1.333
+  text-align: center
+
