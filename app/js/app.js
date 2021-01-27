@@ -2,24 +2,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// Custom JS
 
-	//Добавление стилей в html
-	[ 'https://alex-khrust.github.io/S.Tomilo/app/css/app.min.css',
-	].forEach(function(href) {
-		var link = document.createElement('link');
-		link.rel  = 'stylesheet';
-    link.type = 'text/css';
-		link.href = href;
-		link.async = false;
-		document.head.appendChild(link);
-	});
-	//Добавление скриптов в html
-	[ 'https://alex-khrust.github.io/S.Tomilo/app/js/app.js',
-	].forEach(function(src) {
-		var script = document.createElement('script');
-		script.src = src;
-		script.async = false;
-		document.body.appendChild(script);
-	});
+	// //Добавление стилей в html
+	// [ 'https://alex-khrust.github.io/S.Tomilo/app/css/app.min.css',
+	// ].forEach(function(href) {
+	// 	var link = document.createElement('link');
+	// 	link.rel  = 'stylesheet';
+  //   link.type = 'text/css';
+	// 	link.href = href;
+	// 	link.async = false;
+	// 	document.head.appendChild(link);
+	// });
+	// //Добавление скриптов в html
+	// [ 'https://alex-khrust.github.io/S.Tomilo/app/js/app.js',
+	// ].forEach(function(src) {
+	// 	var script = document.createElement('script');
+	// 	script.src = src;
+	// 	script.async = false;
+	// 	document.body.appendChild(script);
+	// });
 
 	// Скролл к id по клику на ссылку, и добавление ссылке класса aktive
 	$('a[href^="#"]').on('click', function (e) {
