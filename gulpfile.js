@@ -55,6 +55,7 @@ function scripts() {
 		})).on('error', function handleError() {
 			this.emit('end')
 		})
+		// .pipe(rename('app.min.js'))
 		.pipe(rename('libs.min.js'))
 		.pipe(dest('app/js'))
 		.pipe(browserSync.stream())
@@ -82,7 +83,7 @@ function images() {
 function buildcopy() {
 	return src([
 		'{app/js,app/css}/*.min.*',
-		'{app/js}/*',
+		'{app/js}/*.*',
 		'!app/images/src/**/*',
 		'app/images/**/*.*',
 		'app/fonts/**/*'

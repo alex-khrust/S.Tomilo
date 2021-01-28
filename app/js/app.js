@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		script.async = false;
 		document.head.appendChild(script);
 	});
-	[ 'https://alex-khrust.github.io/S.Tomilo/app/js/app.js',
-	].forEach(function(src) {
-		var script = document.createElement('script');
-		script.src = src;
-		script.async = false;
-		document.body.appendChild(script);
-	});
+	// [ 'https://alex-khrust.github.io/S.Tomilo/app/js/app.js',
+	// ].forEach(function(src) {
+	// 	var script = document.createElement('script');
+	// 	script.src = src;
+	// 	script.async = false;
+	// 	document.body.appendChild(script);
+	// });
 
 	// Скролл к id по клику на ссылку, и добавление ссылке класса aktive
 	$('a[href^="#"]').on('click', function (e) {
@@ -88,9 +88,38 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	//Добавление классов и атрибутов для WOW анимации
 	var plus = 0;
-	$('.practice-list li').addClass('wow fadeInRight').each(function(i) {
+	// $('h2').addClass('wow bounceIn').each(function(i) {
+  //   plus += 0.15;
+  //   $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'0.5s'});
+	// });
+	$('main .btn').addClass('wow pulse').each(function(i) {
+		// plus += 0.15;
+    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'0.8s', 'data-wow-iteration':'3'});
+	});
+	
+	$('h3').addClass('wow fadeInRight').each(function(i) {
+		// plus += 0.15;
+		$(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'0.5s'});
+	});
+
+	$('.about .desc p').addClass('wow zoomInRight').each(function(i) {
     plus += 0.15;
     $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'0.5s'});
+	});
+
+	var plus = 0;
+	$('.services__practice li').addClass('wow fadeInRight').each(function(i) {
+    plus += 0.15;
+    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'0.5s'});
+	});
+	$('.services__img').addClass('wow fadeIn').each(function(i) {
+    // plus += 0.15;
+    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'0.5s'});
+	});
+	var plus = 0;
+	$('.services__experts li').addClass('wow bounceIn').each(function(i) {
+    plus += 0.15;
+    $(this).attr({'data-wow-delay': plus + 's' , 'data-wow-duration':'1s'});
 	});
 	
 	//WOW анимационные эффекты
@@ -98,7 +127,7 @@ document.addEventListener('DOMContentLoaded', () => {
 		{		
 			boxClass:     'wow',      // animated element css class (default is wow)
 			animateClass: 'animated', // animation css class (default is animated)
-			offset:       0,          // distance to the element when triggering the animation (default is 0)
+			offset:       70,          // distance to the element when triggering the animation (default is 0)
 			mobile:       true,       // trigger animations on mobile devices (default is true)
 			live:         true,       // act on asynchronously loaded content (default is true)
 			callback:     function(box) {
