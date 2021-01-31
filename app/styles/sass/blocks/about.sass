@@ -6,25 +6,32 @@
     align-items: center
     justify-content: space-between
     row-gap: 80px
-    @media ( min-width: 768px )
+    @media ( min-width: 1025px )
       flex-flow: wrap
 
   .foto
     width: auto
     // height: auto
     height: clamp(400px, 90vh, 823px)
+    margin: 0 auto
     max-width: 520px
-    // max-height: 823px
+    max-height: 823px
     position: relative
+    @media ( min-width: 1025px )
+      margin: 0
     &::after
       content: ''
-      width: 389px
-      height: 389px
+      width: 40vh
+      height: 40vh
+      max-width: 389px
+      max-height: 389px
       object-fit: contain
       display: inline-block
       position: absolute
-      right: -130px
-      bottom: 50px
+      // right: -130px
+      // bottom: 50px
+      right: -14vh
+      bottom: 6vh
       border: 3px solid rgb(100, 38, 221)
       border-radius: 50%
       opacity: 0.102
@@ -32,20 +39,27 @@
 
 
     img
-      width: auto
-      height: 100%
+      width: 100%
+      height: auto
       max-width: 100%
       object-fit: cover
+      @media ( min-width: 450px )
+        width: auto
+        height: 100%
 
     .triangle
-      left: -30px
-      bottom: -30px
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170px' height='150px' stroke-width='30px' stroke='rgb(100, 34, 219)' fill='transparent'%3E%3Cpolygon points='30,130 85,30 140,130'/%3E%3C/svg%3E") no-repeat center
+      // left: -30px
+      // bottom: -30px
+      left: -4vh
+      bottom: -4vh
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='170px' height='150px' stroke-width='30px' stroke='rgb(100, 34, 219)' fill='transparent'%3E%3Cpolygon points='30,130 85,30 140,130'/%3E%3C/svg%3E") no-repeat
       transform: rotate(45deg)
 
     .circle
-      right: -105px
-      top: 80px
+      // right: -105px
+      // top: 80px
+      right: -10.6vh
+      top: 8vh
 
   .desc
     width: 100%
@@ -121,6 +135,6 @@
 .triangle,
 .circle
   display: none !important
-  @media ( min-width: 768px )
+  @media ( min-width: 1300px )
     display: inline-block !important
     

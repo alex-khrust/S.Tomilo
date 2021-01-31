@@ -15,6 +15,7 @@
     display: flex
     flex-flow: column
     align-items: center
+    position: relative
 
   h3
     margin-left: 0
@@ -117,6 +118,7 @@
         font-size: clamp(16px, 1.32vw, 19px)
         font-weight: 500
         color: #6a697f
+        text-align: center
 
     .btns
       width: auto
@@ -149,4 +151,53 @@
 
 
 
-
+.client
+  position: absolute
+  border-radius: 50%
+  background-repeat: no-repeat !important
+  background-size: cover !important
+  z-index: 1
+  @media ( max-width: 1080px)
+    display: none
+  &--1
+    width: 70px
+    height: 70px
+    top: 30%
+    left: -255px
+    background: url(../images/dist/client-1.png)
+  &--2
+    width: 100px
+    height: 100px
+    bottom: 0
+    left: -200px
+    background: url(../images/dist/client-2.png)
+  &--3
+    width: 104px
+    height: 104px
+    top: -74px
+    left: -152px
+    background: url(../images/dist/client-3.png)
+  &--4
+    width: 144px
+    height: 144px
+    bottom: 52px
+    left: -52px
+    background: url(../images/dist/client-4.png)
+  &--5
+    width: 68px
+    height: 68px
+    bottom: -10px
+    right: -145px
+    background: url(../images/dist/client-5.png)
+  &--6
+    width: 96px
+    height: 96px
+    top: calc(14px - 96px)
+    right: calc(-99px - 96px)
+    background: url(../images/dist/client-6.png)
+  &--7
+    width: 118px
+    height: 118px
+    top: 99px
+    right: -259px
+    background: url(../images/dist/client-7.png)

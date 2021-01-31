@@ -52,10 +52,14 @@
 
         h4
           margin-right: auto
-          margin-left: 0
+          margin-left: 50px
+          @media (min-width: 1080px)
+            margin-left: 0
+            &:before
+              left: -70px !important
           &:before
             content: '</'
-            left: -70px
+            left: -50px
             right: unset
 
       .container
@@ -67,6 +71,7 @@
       h4
         width: auto
         margin-bottom: 30px
+        margin-right: 50px
         display: inline-flex
         font-family: Rubik
         // font-size: clamp(35px, 3vw, 64px)
@@ -77,17 +82,17 @@
         position: relative
         @media (min-width: 1080px)
           margin-bottom: 70px
+          margin-right: 0
+          &:before
+            right: -70px !important
         &:before
           content: '/>'
           left: unset
-          right: -70px
+          right: -50px
           position: absolute
           top: 50%
-          width: 50px
+          width: auto
           transform: translateY(-50%)
-          display: none
-          @media (min-width: 576px)
-            display: inline-block
 
 
     .project__desc

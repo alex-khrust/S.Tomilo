@@ -18,8 +18,15 @@
 
   .foo__menu
     display: flex
+    @media (max-width: 400px)
+      margin: 0
     .menu
       justify-content: space-evenly
+      margin: 10px 0
+      @media (max-width: 400px)
+        a
+          padding-left: 0
+          padding-right: 0
       @media (min-width: 768px)
         justify-content: space-between
 
