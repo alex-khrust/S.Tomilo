@@ -51,22 +51,25 @@ $easing: cubic-bezier(.55,0,.1,1)
 .popup-overlay
   width: 100%
   height: 100%
+  padding: 10px
   position: fixed
   top: 0
   left: 0
-  display: flex
+  display: -webkit-box
+  // flex-flow: column
   align-items: center
   justify-content: center
-  z-index: 100
   opacity: 0
   visibility: hidden
   backface-visibility: hidden
   transition: opacity $speed $easing, visibility $speed $easing
-  padding: 40px
+  overflow: auto
+  z-index: 100
+  @media (min-width: 768px)
+    padding: 40px
   &.show
     opacity: 1
     visibility: visible
-    overflow: auto
     .popup-overlay
       padding: 0
       opacity: 1
@@ -76,7 +79,9 @@ $easing: cubic-bezier(.55,0,.1,1)
 .popup
   width: auto
   height: auto
-  padding: 40px
+  max-width: 714px
+  max-height: 714px
+  padding: 40px 20px
   background-color: #ffffff
   box-shadow: 0 9px 51px 0 rgba(0, 0, 0, 0.31)
   display: flex
@@ -87,17 +92,19 @@ $easing: cubic-bezier(.55,0,.1,1)
   // margin: 40px
   opacity: 0
   // overflow-y: auto
-  overflow: visible
+  overflow: hidden
   z-index: 999
   visibility: hidden
   backface-visibility: hidden
   transform: scale(.8)
   transition: all $speed $easing
+  @media (min-width: 768px)
+    padding: 40px
   &.show
     visibility: visible
     opacity: 1
     transform: scale(1)
-
+    position: relative
     .close-btn
       transform: translateY(10px)
       opacity: 1
@@ -105,39 +112,53 @@ $easing: cubic-bezier(.55,0,.1,1)
   form
     width: 100%
     height: 100%
-    padding: 0 55px
+    padding: 0
     display: flex
     flex-flow: column
     align-items: center
     justify-content: center
+    @media (min-width: 768px)
+      padding: 0 55px
 
     h4
-      margin-bottom: 50px
+      margin-bottom: 25px
       font-size: 42px
+      font-size: clamp(30px, 2.7vw, 42px)
       font-family: GothamPro
       color: rgb(255, 199, 39)
       line-height: 1.048
       text-align: center
+      @media (min-width: 768px)
+        margin-bottom: 50px
+
+    label
+      width: 100%
+      max-width: 396px
 
     input
+      width: 100%
       margin-bottom: 10px
-      // min-height: 60px
-      // padding: 10px 45px
-      // @media (min-width: 1440px)
-      //   min-height: 90px
-      //   padding: 25px 45px
+      min-height: 60px
+      padding: 15px 20px
+      @media (min-width: 1440px)
+        min-height: 90px
+        padding: 25px 45px
 
     textarea
       height: 150px
+      padding: 20px 20px
       @media (min-width: 1440px)
         height: 200px
+        padding: 25px 45px
 
     
     .btn
-      // height: 60px
-      margin-top: 50px
-      // @media (min-width: 1440px)
-      //   height: 90px
+      height: 60px
+      margin-top: 25px
+      @media (min-width: 768px)
+        margin-top: 50px
+      @media (min-width: 1440px)
+        height: 90px
 
 
 
@@ -146,6 +167,7 @@ $easing: cubic-bezier(.55,0,.1,1)
   max-width: 300px
   padding: 20px
   font-size: 42px
+  font-size: clamp(30px, 3vw, 42px)
   font-weight: bold
   font-family: GothamPro
   color: rgb(255, 199, 39)
