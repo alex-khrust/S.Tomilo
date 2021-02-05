@@ -1,5 +1,5 @@
 let preprocessor = 'sass', // Preprocessor (sass, less, styl); 'sass' also work with the Scss syntax in blocks/ folder.
-		fileswatch   = 'html,htm,txt,json,md,woff2' // List of files extensions for watching & hard reload
+	fileswatch   = 'html,htm,txt,json,md,woff2' // List of files extensions for watching & hard reload
 
 const { src, dest, parallel, series, watch } = require('gulp')
 const browserSync  = require('browser-sync').create()
@@ -62,7 +62,7 @@ function scripts() {
 }
 
 function styles() {
-	return src([`app/styles/${preprocessor}/*.*`, `!app/styles/${preprocessor}/_*.*`])
+	return src([`app/${preprocessor}/*.*`, `!app/${preprocessor}/_*.*`])
 		.pipe(eval(`${preprocessor}glob`)())
 		.pipe(eval(preprocessor)())
 		.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true }))
@@ -88,7 +88,7 @@ function buildcopy() {
 		'app/images/**/*.*',
 		'app/fonts/**/*'
 	], { base: 'app/' })
-	.pipe(dest('dist'))
+	.pipe(dest('dist/'))
 }
 
 async function buildhtml() {
@@ -117,7 +117,7 @@ function deploy() {
 }
 
 function startwatch() {
-	watch(`app/styles/${preprocessor}/**/*`, { usePolling: true }, styles)
+	watch(`app/${preprocessor}/**/*`, { usePolling: true }, styles)
 	watch(['!app/js/**/*.min.js', 'app/js/**/*.js'], { usePolling: true }, scripts)
 	watch('app/images/src/**/*.{jpg,jpeg,png,webp,svg,gif}', { usePolling: true }, images)
 	watch(`app/**/*.{${fileswatch}}`, { usePolling: true }).on('change', browserSync.reload)
