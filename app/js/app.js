@@ -1,13 +1,17 @@
 document.addEventListener('DOMContentLoaded', () => {
 	// Custom JS
 
-	// Скролл к id по клику на ссылку, и добавление ссылке класса aktive
+	// Скролл к id по клику на ссылку, и добавление ссылке класса active
 	$('a[href^="#"]').on('click', function (e) {
 		e.preventDefault();
 		$(document).off("scroll");
 
 		$(this).each(function () {
 			$('a[href^="#"]').removeClass('active');
+
+			$('#menu_ham.open').removeClass('open');
+			$('.sm_menu_outer.active').removeClass('active');
+			$('body.mmactive').removeClass('mmactive');
 		});
 		$(this).addClass('active');
 
@@ -237,4 +241,33 @@ document.addEventListener('DOMContentLoaded', () => {
 	);
 	wow.init();
 
+	 // Hamburger
+	 $(".mobile_menu").slideMobileMenu({
+
+		// Hamburger Id
+		"hamburgerId"   : "menu_ham", 
+	
+		// Menu Wrapper Class
+		"wrapperClass"  : "sm_menu_outer", 
+	
+		// Submenu Class
+		"submenuClass"  : "submenu", 
+	
+		// or 'accordion'
+		"menuStyle": "slide",
+	
+		// Calls when menu loaded
+		"onMenuLoad"    : function() { return true; }, 
+	
+		// Calls when menu open/close
+		"onMenuToggle"  : function() { return true; } 
+		
+	});
+
 })
+
+/*
+JQuery Simple MobileMenu
+https://github.com/Position2/jQuery-Simple-MobileMenu
+*/
+!function(s){var e={hamburgerId:"menu_ham",wrapperClass:"sm_menu_outer",submenuClass:"submenu",onMenuLoad:function(){return!0},onMenuToggle:function(){return!0}};s.fn.slideMobileMenu=function(n){if(0===this.length)return this;var t={},a=s(this),i=function(){t.hamburger=s("<button/>",{id:t.settings.hamburgerId,html:"<span></span><span></span><span></span><span></span>"}),t.smmOuter=s("<div/>",{class:t.settings.wrapperClass}),a.appendTo(t.smmOuter),t.hamburger.add(t.smmOuter).appendTo(s("header .container"))},u=function(){t.smmOuter.find("ul."+t.settings.submenuClass).each(function(){var e=s(this),n=e.closest("li"),t=n.find("> a"),a=s("<li/>",{class:"back",html:"<a href='#'>"+t.text()+"</a>"});n.addClass("hasChild"),a.prependTo(e)})};t.settings=s.extend({},e,n),i(),u(),"function"==typeof t.settings.onMenuLoad&&t.settings.onMenuLoad(a),t.hamburger.click(function(e){s("#"+t.settings.hamburgerId).toggleClass("open"),s("."+t.settings.wrapperClass).toggleClass("active").find("li.active").removeClass("active"),s("body").toggleClass("mmactive"),"function"==typeof t.settings.onMenuToggle&&t.settings.onMenuToggle(a,s("#"+t.settings.hamburgerId).hasClass("open"))}),t.smmOuter.find("li.hasChild > a").click(function(e){e.preventDefault(),s("."+t.settings.wrapperClass).scrollTop(0),s(this).parent().addClass("active").siblings().removeClass("active")}),t.smmOuter.find("li.back a").click(function(e){e.preventDefault(),s(this).closest("ul."+t.settings.submenuClass).parent().removeClass("active")})}}(jQuery);
